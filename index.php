@@ -1,8 +1,8 @@
 <?php
 $title = "TinyVPS";
 $city = "Fürth";
-$fav_link ="https://www.europeana.eu/en";
-$footer ="This is <a href=''>Tiny page</a>";
+$fav_link = "https://www.europeana.eu/en";
+$footer = "This is <a href='https://github.com/dmpop/tinypage'>Tiny page</a>";
 $search = "https://tinyvps.xyz/gufo/search.php?q=";
 $request = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1";
 $response = file_get_contents($request);
@@ -11,8 +11,8 @@ $img_url = "https://bing.com" . $data['images'][0]['url'];
 ?>
 
 <html lang="en">
-<!-- Author: Dmitri Popov, dmpop@linux.com
-         License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
+<!-- Author: Dmitri Popov, dmpop@cameracode.coffee
+License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 
 <head>
 	<title><?php echo $title ?></title>
@@ -89,7 +89,7 @@ $img_url = "https://bing.com" . $data['images'][0]['url'];
 		<strong>Favorite link:</strong> <a href="<?php echo $fav_link; ?>">Europeana</a>
 	</div>
 	<div class="flexbox">
-		<form style="margin-bottom: -0.01em;"  method="POST" action="" autocomplete="off">
+		<form style="margin-bottom: -0.01em;" method="POST" action="" autocomplete="off">
 			<label for="query">Search: </label>
 			<input type="text" name="query" />
 		</form>

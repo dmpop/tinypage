@@ -4,7 +4,7 @@ Super simple landing page written in PHP.
 
 ## Author
 
-Dmitri Popov [dmpop@linux.com](mailto:dmpop@tokyoma.de)
+Dmitri Popov [dmpop@linux.com](mailto:dmpop@cameracode.coffee)
 
 ## License
 
