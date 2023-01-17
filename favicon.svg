@@ -71,36 +71,58 @@
          transform="matrix(0.92429716,0,0,0.92429716,7.9864463,7.9781872)">
         <path
            id="path33019-7"
-           style="fill:#00d4aa;fill-opacity:0.996984;stroke-width:3.44206"
+           style="fill:#ff2a2a;fill-opacity:0.996984;stroke-width:3.44206"
            d="m 166.73308,117.57099 c 0,31.27545 -23.33644,43.56911 -54.61192,43.56911 -31.275427,0 -42.714279,-14.5588 -42.714282,-45.83426 0,-31.275462 18.7172,-49.896586 49.992642,-49.896586 31.27547,0 47.33356,20.88626 47.33356,52.161736 z"
            sodipodi:nodetypes="sssss" />
         <path
            id="path33019"
-           style="fill:#e5ff80;fill-opacity:0.996984;stroke-width:3.11346"
+           style="fill:#ff5555;fill-opacity:0.996984;stroke-width:3.11346"
            d="m 160.56322,114.95896 c 0,28.28977 -17.44653,41.64264 -45.73631,41.64264 -28.289819,0 -40.705655,-14.27589 -40.705659,-42.56567 0,-28.28976 16.991253,-43.944865 45.281089,-43.944865 28.28977,-2e-6 41.16088,16.578117 41.16088,44.867895 z"
            sodipodi:nodetypes="sssss" />
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:69.9822px;line-height:1.25;font-family:sans-serif;fill:#e580ff;fill-opacity:1;stroke:none;stroke-width:1.74954"
+           style="font-style:normal;font-weight:normal;font-size:69.9822px;line-height:1.25;font-family:sans-serif;fill:#ffe680;fill-opacity:1;stroke:none;stroke-width:1.74954"
            x="114.08723"
            y="126.80189"
            id="text2898-36"><tspan
              sodipodi:role="line"
              id="tspan2896-1"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Dyuthi;-inkscape-font-specification:Dyuthi;fill:#e580ff;fill-opacity:1;stroke-width:1.74954"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Dyuthi;-inkscape-font-specification:Dyuthi;fill:#ffe680;fill-opacity:1;stroke-width:1.74954"
              x="114.08723"
              y="126.80189">p</tspan></text>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:99.6606px;line-height:1.25;font-family:sans-serif;fill:#00ccff;fill-opacity:0.999933;stroke:none;stroke-width:2.49149"
+           style="font-style:normal;font-weight:normal;font-size:69.9822px;line-height:1.25;font-family:sans-serif;fill:#ffcc00;fill-opacity:0.81;stroke:none;stroke-width:1.74954"
+           x="113.01595"
+           y="123.95087"
+           id="text2898-36-7"><tspan
+             sodipodi:role="line"
+             id="tspan2896-1-5"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Dyuthi;-inkscape-font-specification:Dyuthi;fill:#ffcc00;fill-opacity:0.81;stroke-width:1.74954"
+             x="113.01595"
+             y="123.95087">p</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:99.6606px;line-height:1.25;font-family:sans-serif;fill:#ffb380;fill-opacity:0.999933;stroke:none;stroke-width:2.49149"
            x="82.938431"
            y="140.0963"
            id="text2898"><tspan
              sodipodi:role="line"
              id="tspan2896"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Dyuthi;-inkscape-font-specification:Dyuthi;fill:#00ccff;fill-opacity:0.999933;stroke-width:2.49149"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Dyuthi;-inkscape-font-specification:Dyuthi;fill:#ffb380;fill-opacity:0.999933;stroke-width:2.49149"
              x="82.938431"
              y="140.0963">t</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:99.6606px;line-height:1.25;font-family:sans-serif;fill:#ff9955;fill-opacity:0.81;stroke:none;stroke-width:2.49149"
+           x="80.560722"
+           y="137.96164"
+           id="text2898-3"><tspan
+             sodipodi:role="line"
+             id="tspan2896-6"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Dyuthi;-inkscape-font-specification:Dyuthi;fill:#ff9955;fill-opacity:0.81;stroke-width:2.49149"
+             x="80.560722"
+             y="137.96164">t</tspan></text>
       </g>
     </g>
   </g>
