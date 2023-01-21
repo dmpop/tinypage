@@ -2,6 +2,7 @@
 $title = "TinyVPS";
 $city = "Fürth";
 $mkt = "";
+$text_file = "";
 $fav_link = "https://www.europeana.eu/en";
 $request = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=$mkt";
 $response = file_get_contents($request);
@@ -78,8 +79,19 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 	</div>
 	<p></p>
 	<div class="flexbox">
-		<strong>Favorite link:</strong> <a href="<?php echo $fav_link; ?>">Europeana</a>
+		<strong>Favorite:</strong> <a href="<?php echo $fav_link; ?>">Europeana</a>
 	</div>
+	<?php
+	if (file_exists($text_file)) {
+		$lines = file($text_file);
+		$random_line = $lines[array_rand($lines)];
+		echo "
+		<div class='flexbox'>
+		<strong>Word or phrase:</strong> $random_line
+		</div>
+		";
+	}
+	?>
 	<div id="footer">
 		<?php echo $img_title; ?>
 	</div>
