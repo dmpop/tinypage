@@ -92,6 +92,10 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 		";
 	}
 	?>
+	<!-- TEMPLATE	
+	<div class="flexbox">
+		HTML and PHP code goes here
+	</div> -->
 	<div id="footer">
 		<?php echo $img_title; ?>
 	</div>
