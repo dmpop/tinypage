@@ -1,12 +1,13 @@
 <?php
 $title = "TinyVPS";
 $city = "Fürth";
+$mkt = "";
 $fav_link = "https://www.europeana.eu/en";
-$footer = "This is <a href='https://github.com/dmpop/tinypage'>Tiny page</a>";
-$request = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1";
+$request = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=$mkt";
 $response = file_get_contents($request);
 $data = json_decode($response, true);
 $img_url = "https://bing.com" . $data['images'][0]['url'];
+$img_title = $data['images'][0]['title'];
 ?>
 <html lang="en">
 <!-- Author: Dmitri Popov, dmpop@cameracode.coffee
@@ -43,20 +44,13 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 		#footer {
 			position: fixed;
 			text-align: center;
-			vertical-align: middle;
+			vertical-align: bottom;
 			color: #ffffff;
 			background-color: #000000;
 			opacity: 0.5;
 			bottom: 0;
 			width: 100%;
 			height: 1.5em;
-		}
-
-		input {
-			width: 20em;
-			height: 2em;
-			border: 0;
-			border-radius: 5px;
 		}
 
 		a {
@@ -87,7 +81,7 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 		<strong>Favorite link:</strong> <a href="<?php echo $fav_link; ?>">Europeana</a>
 	</div>
 	<div id="footer">
-		<?php echo $footer; ?>
+		<?php echo $img_title; ?>
 	</div>
 </body>
 
