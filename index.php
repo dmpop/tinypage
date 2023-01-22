@@ -3,12 +3,12 @@ $title = "TinyVPS";
 $city = "Fürth";
 $mkt = "";
 $text_file = "";
-$fav_link = "https://www.europeana.eu/en";
+$bookmark_file = "";
 $request = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=$mkt";
 $response = file_get_contents($request);
 $data = json_decode($response, true);
 $img_url = "https://bing.com" . $data['images'][0]['url'];
-$img_title = $data['images'][0]['title'];
+$caption = $data['images'][0]['title'] . ". " . $data['images'][0]['copyright'];
 ?>
 <html lang="en">
 <!-- Author: Dmitri Popov, dmpop@cameracode.coffee
@@ -78,10 +78,16 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 		?>
 	</div>
 	<p></p>
-	<div class="flexbox">
-		<strong>Favorite:</strong> <a href="<?php echo $fav_link; ?>">Europeana</a>
-	</div>
 	<?php
+	if (file_exists($bookmark_file)) {
+		$lines = file($bookmark_file);
+		$random_line = $lines[array_rand($lines)];
+		echo "
+		<div class='flexbox'>
+		<strong>Bookmark:</strong> <a href='$random_line'>$random_line</a>
+		</div>
+		";
+	}
 	if (file_exists($text_file)) {
 		$lines = file($text_file);
 		$random_line = $lines[array_rand($lines)];
@@ -97,7 +103,7 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 		HTML and PHP code goes here
 	</div> -->
 	<div id="footer">
-		<?php echo $img_title; ?>
+		<?php echo $caption; ?>
 	</div>
 </body>
 
