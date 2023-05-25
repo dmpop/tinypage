@@ -1,14 +1,13 @@
 <?php
 $title = "TinyVPS";
 $city = "Fürth";
-$mkt = "";
-$text_file = "";
-$bookmark_file = "";
-$request = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=$mkt";
-$response = file_get_contents($request);
-$data = json_decode($response, true);
-$img_url = "https://bing.com" . $data['images'][0]['url'];
-$caption = $data['images'][0]['title'] . ". " . $data['images'][0]['copyright'];
+$footer = "This is <a href='https://github.com/dmpop/tinypage'>Tiny Page</a>. I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
+$text_file = "vocabulary.txt";
+$bookmark_file = "bookmarks.txt";
+$background_dir = "backgrounds";
+$files = glob($background_dir . '/*');
+$file = array_rand($files);
+$background = $files[$file];
 ?>
 <html lang="en">
 <!-- Author: Dmitri Popov, dmpop@cameracode.coffee
@@ -19,15 +18,12 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 	<link rel="icon" type="image/png" href="/favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		html {
-			background: url(<?php echo $img_url; ?>) no-repeat center center fixed;
+		body {
+			background: url(<?php echo $background; ?>) no-repeat center center fixed;
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
 			background-size: cover;
-		}
-
-		body {
 			font-family: "Karla", monospace;
 		}
 
@@ -35,21 +31,21 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 			float: left;
 			color: #ffffff;
 			background-color: #000000;
-			opacity: 0.5;
+			opacity: 0.65;
 			border-radius: 5px;
 			padding: .5em;
 			margin-right: .5em;
 			margin-bottom: .5em;
 		}
 
-		#footer {
+		.footer {
 			position: fixed;
 			text-align: center;
-			vertical-align: bottom;
 			color: #ffffff;
 			background-color: #000000;
-			opacity: 0.5;
+			opacity: 0.65;
 			bottom: 0;
+			left: 0;
 			width: 100%;
 			height: 1.5em;
 		}
@@ -58,7 +54,16 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 			color: #ffffff;
 		}
 
-		@font-face {
+		ul {
+			list-style-position: inside;
+			padding-left: 0;
+		}
+
+		li {
+			line-height: 150%;
+		}
+
+		​@font-face {
 			font-family: "Karla";
 			font-style: normal;
 			src: url("Karla-Regular.woff2") format("woff2");
@@ -67,6 +72,19 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 </head>
 
 <body>
+	<?php
+	$handle = fopen($bookmark_file, "r");
+	if ($handle) {
+		echo "<div class='flexbox'>
+		<strong>Bookmarks</strong><br/>
+	<ul>";
+		while (($line = fgets($handle)) !== false) {
+			echo "<li><a href='$line'>" . $line . "</a></li>";
+		}
+		fclose($handle);
+		echo "</div>";
+	}
+	?>
 	<div class="flexbox">
 		<?php
 		$url = "https://wttr.in/" . $city . "?format=%c+%t,+%w,+%p,+%h";
@@ -77,17 +95,7 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 		echo "<strong>" . $city . ":</strong> " . $result;
 		?>
 	</div>
-	<p></p>
 	<?php
-	if (file_exists($bookmark_file)) {
-		$lines = file($bookmark_file);
-		$random_line = $lines[array_rand($lines)];
-		echo "
-		<div class='flexbox'>
-		<strong>Bookmark:</strong> <a href='$random_line'>$random_line</a>
-		</div>
-		";
-	}
 	if (file_exists($text_file)) {
 		$lines = file($text_file);
 		$random_line = $lines[array_rand($lines)];
@@ -102,8 +110,8 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 	<div class="flexbox">
 		HTML and PHP code goes here
 	</div> -->
-	<div id="footer">
-		<?php echo $caption; ?>
+	<div class="footer">
+		<?php echo $footer ?>
 	</div>
 </body>
 
