@@ -19,13 +19,16 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 	<link rel="icon" type="image/png" href="/favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
+		html * {
+			font-family: "Inter", monospace;
+		}
+
 		body {
 			background: url(<?php echo $img_url; ?>) no-repeat center center fixed;
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
 			background-size: cover;
-			font-family: "Karla", monospace;
 		}
 
 		.flexbox {
@@ -64,11 +67,18 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 			line-height: 150%;
 		}
 
-		​@font-face {
-			font-family: "Karla";
+		@font-face {
+			font-family: "Inter";
+			src: url("fonts/InterDisplay-Regular.woff2") format("woff2");
+			font-weight: normal;
 			font-style: normal;
-			src: url("Karla-Regular.woff2") format("woff2");
 		}
+
+		@font-face {
+			font-family: "Inter";
+			src: url("fonts/InterDisplay-SemiBold.woff2") format("woff2");
+			font-weight: bold;
+			font-style: normal;
 	</style>
 </head>
 
