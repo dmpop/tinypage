@@ -4,11 +4,18 @@ $city = "Fürth";
 $footer = "This is <a href='https://github.com/dmpop/tinypage'>Tiny Page</a>. I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
 $text_file = "vocabulary.txt";
 $bookmark_file = "bookmarks.txt";
-$request = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1";
-$response = file_get_contents($request);
-$data = json_decode($response, true);
-$img_url = "https://bing.com" . $data['images'][0]['url'];
-$img_title = $data['images'][0]['title'];
+$photos_dir = "photos";
+if (!file_exists($photos_dir) or count(glob("$photos_dir/*")) === 0) {
+	$request = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1";
+	$response = file_get_contents($request);
+	$data = json_decode($response, true);
+	$background = "https://bing.com" . $data['images'][0]['url'];
+	$img_title = $data['images'][0]['title'];
+} else {
+	$photos = glob($photos_dir . '/*');
+	$photo = array_rand($photos);
+	$background = $photos[$photo];
+}
 ?>
 <html lang="en">
 <!-- Author: Dmitri Popov, dmpop@cameracode.coffee
@@ -20,11 +27,11 @@ License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 		html * {
-			font-family: "Inter", monospace;
+			font-family: "Inter", sans-serif;
 		}
 
 		body {
-			background: url(<?php echo $img_url; ?>) no-repeat center center fixed;
+			background: url(<?php echo $background; ?>) no-repeat center center fixed;
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
