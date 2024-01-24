@@ -15,6 +15,7 @@ if (!file_exists($photos_dir) or count(glob("$photos_dir/*")) === 0) {
 	$photos = glob($photos_dir . '/*');
 	$photo = array_rand($photos);
 	$background = $photos[$photo];
+	$img_title = NULL;
 }
 ?>
 <html lang="en">
